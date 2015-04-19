@@ -1,0 +1,46 @@
+
+tile.fence_planks_spruce.name=Spruce Fence
+tile.fence_planks_birch.name=Birch Fence
+tile.fence_planks_jungle.name=Jungle Fence
+tile.fence_planks_acacia.name=Acacia Fence
+tile.fence_planks_big_oak.name=Dark Oak Fence
+
+tile.fence_colored_black.name=Black Fence
+tile.fence_colored_red.name=Red Fence
+tile.fence_colored_green.name=Green Fence
+tile.fence_colored_brown.name=Brown Fence
+tile.fence_colored_blue.name=Blue Fence
+tile.fence_colored_purple.name=Purple Fence
+tile.fence_colored_cyan.name=Cyan Fence
+tile.fence_colored_silver.name=Light Gray Fence
+tile.fence_colored_gray.name=Gray Fence
+tile.fence_colored_pink.name=Pink Fence
+tile.fence_colored_lime.name=Lime Fence
+tile.fence_colored_yellow.name=Yellow Fence
+tile.fence_colored_light_blue.name=Light Blue Fence
+tile.fence_colored_magenta.name=Magenta Fence
+tile.fence_colored_orange.name=Orange Fence
+tile.fence_colored_white.name=White Fence
+
+tile.fence_gate_planks_spruce.name=Spruce Fence Gate
+tile.fence_gate_planks_birch.name=Birch Fence Gate
+tile.fence_gate_planks_jungle.name=Jungle Fence Gate
+tile.fence_gate_planks_acacia.name=Acacia Fence Gate
+tile.fence_gate_planks_big_oak.name=Dark Oak Fence Gate
+
+tile.fence_gate_colored_black.name=Black Fence Gate
+tile.fence_gate_colored_red.name=Red Fence Gate
+tile.fence_gate_colored_green.name=Green Fence Gate
+tile.fence_gate_colored_brown.name=Brown Fence Gate
+tile.fence_gate_colored_blue.name=Blue Fence Gate
+tile.fence_gate_colored_purple.name=Purple Fence Gate
+tile.fence_gate_colored_cyan.name=Cyan Fence Gate
+tile.fence_gate_colored_silver.name=Light Gray Fence Gate
+tile.fence_gate_colored_gray.name=Gray Fence Gate
+tile.fence_gate_colored_pink.name=Pink Fence Gate
+tile.fence_gate_colored_lime.name=Lime Fence Gate
+tile.fence_gate_colored_yellow.name=Yellow Fence Gate
+tile.fence_gate_colored_light_blue.name=Light Blue Fence Gate
+tile.fence_gate_colored_magenta.name=Magenta Fence Gate
+tile.fence_gate_colored_orange.name=Orange Fence Gate
+tile.fence_gate_colored_white.name=White Fence Gate
