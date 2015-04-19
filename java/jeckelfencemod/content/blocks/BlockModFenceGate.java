@@ -2,7 +2,6 @@ package jeckelfencemod.content.blocks;
 
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.relauncher.Side;
@@ -13,7 +12,8 @@ public class BlockModFenceGate extends BlockFenceGate
 	public BlockModFenceGate(String iconName)
 	{
 		//super(Material.wood);
-		this.setCreativeTab(CreativeTabs.tabRedstone);
+		super();
+		this.setCreativeTab(null);
 		this._iconName = iconName;
 	}
 

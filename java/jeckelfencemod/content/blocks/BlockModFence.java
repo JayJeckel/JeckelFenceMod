@@ -13,6 +13,7 @@ public class BlockModFence extends BlockFence
 	public BlockModFence(String iconName, Material material)
 	{
 		super(iconName, material);
+		this.setCreativeTab(null);
 	}
 
 	@Override public boolean canConnectFenceTo(IBlockAccess world, int x, int y, int z)

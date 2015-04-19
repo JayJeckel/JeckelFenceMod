@@ -1,5 +1,6 @@
 package jeckelfencemod.content;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import jeckelfencemod.content.blocks.BlockModFence;
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.SoundType;
@@ -9,7 +10,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class FenceBuilder
 {
@@ -44,9 +44,8 @@ public class FenceBuilder
 			final Object recipeInput)
 	{
 		final Block fence = FenceBuilder.block(fenceName, iconName, hardness, resistance, material, sound);
-		GameRegistry.registerBlock(fence, fence.getUnlocalizedName());
+		GameRegistry.registerBlock(fence, fence.getUnlocalizedName());// IMPORTANT: Must register block before creating recipe!!
 		final IRecipe recipe = FenceBuilder.recipe(new ItemStack(fence, 3), recipeInput);
-		GameRegistry.addRecipe(recipe);
 		return new ContentData(fence, null, recipe);
 	}
 
@@ -56,9 +55,8 @@ public class FenceBuilder
 			final Object recipeInput, final Object recipeInputSecondary)
 	{
 		final Block fence = FenceBuilder.block(fenceName, iconName, hardness, resistance, material, sound);
-		GameRegistry.registerBlock(fence, fence.getUnlocalizedName());
+		GameRegistry.registerBlock(fence, fence.getUnlocalizedName());// IMPORTANT: Must register block before creating recipe!!
 		final IRecipe recipe = FenceBuilder.recipe(new ItemStack(fence, 3), recipeInput, recipeInputSecondary);
-		GameRegistry.addRecipe(recipe);
 		return new ContentData(fence, null, recipe);
 	}
 

@@ -1,5 +1,6 @@
 package jeckelfencemod.content;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import jeckelfencemod.content.blocks.BlockModFenceGate;
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.SoundType;
@@ -8,7 +9,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GateBuilder
 {
@@ -43,9 +43,8 @@ public class GateBuilder
 			final Object recipeInput)
 	{
 		final Block gate = GateBuilder.block(gateName, iconName, hardness, resistance, sound);
-		GameRegistry.registerBlock(gate, gate.getUnlocalizedName());
+		GameRegistry.registerBlock(gate, gate.getUnlocalizedName());// IMPORTANT: Must register block before creating recipe!!
 		final IRecipe recipe = GateBuilder.recipe(new ItemStack(gate, 1), recipeInput);
-		GameRegistry.addRecipe(recipe);
 		return new ContentData(gate, null, recipe);
 	}
 
@@ -55,9 +54,8 @@ public class GateBuilder
 			final Object recipeInput, final Object recipeInputSecondary)
 	{
 		final Block gate = GateBuilder.block(gateName, iconName, hardness, resistance, sound);
-		GameRegistry.registerBlock(gate, gate.getUnlocalizedName());
+		GameRegistry.registerBlock(gate, gate.getUnlocalizedName());// IMPORTANT: Must register block before creating recipe!!
 		final IRecipe recipe = GateBuilder.recipe(new ItemStack(gate, 1), recipeInput, recipeInputSecondary);
-		GameRegistry.addRecipe(recipe);
 		return new ContentData(gate, null, recipe);
 	}
 

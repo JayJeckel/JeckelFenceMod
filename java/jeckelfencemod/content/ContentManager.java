@@ -2,6 +2,7 @@ package jeckelfencemod.content;
 
 import java.util.ArrayList;
 
+import jeckelfencemod.common.tabs.MappedCreativeTab;
 import jeckelfencemod.core.Refs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -25,45 +26,68 @@ public class ContentManager
 
 	public void pre()
 	{
-		removeRecipe(new ItemStack(Blocks.fence), Refs.getLogger());
-		GameRegistry.addRecipe(FenceBuilder.recipe(new ItemStack(Blocks.fence, 3), new ItemStack(Blocks.planks, 1, 0)));
+		MappedCreativeTab tab = new MappedCreativeTab(Refs.ModId);
+		tab.setIconItemStack(new ItemStack(Blocks.fence));
+
+		tab.addBlock(Refs.ModId, Blocks.nether_brick_fence);
+
+		tab.addBlock(Refs.ModId, Blocks.fence);
+		tab.addBlock(Refs.ModId, Blocks.fence_gate);
 
 		for (int index = 0; index < woods.length; index++)
 		{
-			final String fenceName = "fence_planks_" + woods[index];
-			final String iconName = "planks_" + woods[index];
 			final int woodMeta = index + 1;
-			fences_wood[index] = FenceBuilder.createWood(fenceName, iconName, woodMeta);
+
+			String blockName;
+			String iconName;
+
+			blockName = "fence_planks_" + woods[index];
+			iconName = "planks_" + woods[index];
+			fences_wood[index] = FenceBuilder.createWood(blockName, iconName, woodMeta);
+			tab.addBlock(Refs.ModId, fences_wood[index].block);
+
+			blockName = "fence_gate_planks_" + woods[index];
+			iconName = "planks_" + woods[index];
+			fence_gates_wood[index] = GateBuilder.createWood(blockName, iconName, woodMeta);
+			tab.addBlock(Refs.ModId, fence_gates_wood[index].block);
 		}
 
 		for (int index = 0; index < colors.length; index++)
 		{
-			String fenceName = "fence_colored_" + colors[index];
-			String iconName = Refs.ModId + ":fence_colored_" + colors[index];
-			fences_colored[index] = FenceBuilder.createWoodColored(fenceName, iconName, index);
+			String blockName;
+			String iconName;
+
+			blockName = "fence_colored_" + colors[index];
+			iconName = Refs.ModId + ":fence_colored_" + colors[index];
+			fences_colored[index] = FenceBuilder.createWoodColored(blockName, iconName, index);
+			tab.addBlock(Refs.ModId, fences_colored[index].block);
+
+			blockName = "fence_gate_colored_" + colors[index];
+			iconName = Refs.ModId + ":fence_colored_" + colors[index];
+			fence_gates_colored[index] = GateBuilder.createWoodColored(blockName, iconName, index);
+			tab.addBlock(Refs.ModId, fence_gates_colored[index].block);
 		}
+	}
+
+	public void initialize()
+	{
+		removeRecipe(new ItemStack(Blocks.fence), Refs.getLogger());
+		GameRegistry.addRecipe(FenceBuilder.recipe(new ItemStack(Blocks.fence, 3), new ItemStack(Blocks.planks, 1, 0)));
 
 		removeRecipe(new ItemStack(Blocks.fence_gate), Refs.getLogger());
 		GameRegistry.addRecipe(GateBuilder.recipe(new ItemStack(Blocks.fence_gate, 1), new ItemStack(Blocks.planks, 1, 0)));
 
 		for (int index = 0; index < woods.length; index++)
 		{
-			String blockName = "fence_gate_planks_" + woods[index];
-			String iconName = "planks_" + woods[index];
-			final int woodMeta = index + 1;
-			fence_gates_wood[index] = GateBuilder.createWood(blockName, iconName, woodMeta);
+			fences_wood[index].registerRecipe();
+			fence_gates_wood[index].registerRecipe();
 		}
 
 		for (int index = 0; index < colors.length; index++)
 		{
-			String blockName = "fence_gate_colored_" + colors[index];
-			String iconName = Refs.ModId + ":fence_colored_" + colors[index];
-			fence_gates_colored[index] = GateBuilder.createWoodColored(blockName, iconName, index);
+			fences_colored[index].registerRecipe();
+			fence_gates_colored[index].registerRecipe();
 		}
-	}
-
-	public void initialize()
-	{
 	}
 
 	public void post()

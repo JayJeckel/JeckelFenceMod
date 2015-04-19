@@ -1,4 +1,6 @@
 
+itemGroup.jeckelfencemod=JeckelFenceMod
+
 tile.fence_planks_spruce.name=Spruce Fence
 tile.fence_planks_birch.name=Birch Fence
 tile.fence_planks_jungle.name=Jungle Fence
